@@ -1,0 +1,9 @@
+C:\Users\Johannes\source\repos\AutoClicker\bin\Release\AutoClicker.exe.config
+C:\Users\Johannes\source\repos\AutoClicker\bin\Release\AutoClicker.exe
+C:\Users\Johannes\source\repos\AutoClicker\bin\Release\AutoClicker.pdb
+C:\Users\Johannes\source\repos\AutoClicker\obj\Release\AutoClicker.Form1.resources
+C:\Users\Johannes\source\repos\AutoClicker\obj\Release\AutoClicker.Properties.Resources.resources
+C:\Users\Johannes\source\repos\AutoClicker\obj\Release\AutoClicker.csproj.GenerateResource.Cache
+C:\Users\Johannes\source\repos\AutoClicker\obj\Release\AutoClicker.csproj.CoreCompileInputs.cache
+C:\Users\Johannes\source\repos\AutoClicker\obj\Release\AutoClicker.exe
+C:\Users\Johannes\source\repos\AutoClicker\obj\Release\AutoClicker.pdb
