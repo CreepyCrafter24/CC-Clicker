@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutoClicker
+namespace CC_Clicker_2._0
 {
     static class Program
     {
@@ -16,7 +16,9 @@ namespace AutoClicker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Form1._hookID = Form1.SetHook(Form1._proc);
             Application.Run(new Form1());
+            Form1.UnhookWindowsHookEx(Form1._hookID);
         }
     }
 }

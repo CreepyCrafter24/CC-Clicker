@@ -1,4 +1,4 @@
-﻿namespace AutoClicker
+﻿namespace CC_Clicker_2._0
 {
     partial class Form1
     {
@@ -30,98 +30,102 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ClickTimer = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.clickBox = new System.Windows.Forms.CheckBox();
+            this.rightBox = new System.Windows.Forms.CheckBox();
+            this.timeBox = new System.Windows.Forms.TextBox();
+            this.keyButton = new System.Windows.Forms.Button();
+            this.DelmBox = new System.Windows.Forms.CheckBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.delmVal = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // clickBox
             // 
-            this.button1.Location = new System.Drawing.Point(9, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Enable";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.clickBox.AutoSize = true;
+            this.clickBox.Location = new System.Drawing.Point(12, 14);
+            this.clickBox.Name = "clickBox";
+            this.clickBox.Size = new System.Drawing.Size(49, 17);
+            this.clickBox.TabIndex = 0;
+            this.clickBox.Text = "Click";
+            this.clickBox.UseVisualStyleBackColor = true;
+            this.clickBox.CheckedChanged += new System.EventHandler(this.clickBox_CheckedChanged);
             // 
-            // button2
+            // rightBox
             // 
-            this.button2.Location = new System.Drawing.Point(9, 30);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 19);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Disable";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.rightBox.AutoSize = true;
+            this.rightBox.Location = new System.Drawing.Point(12, 42);
+            this.rightBox.Name = "rightBox";
+            this.rightBox.Size = new System.Drawing.Size(51, 17);
+            this.rightBox.TabIndex = 1;
+            this.rightBox.Text = "Right";
+            this.rightBox.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // timeBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "10";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.timeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.timeBox.BackColor = System.Drawing.Color.White;
+            this.timeBox.Location = new System.Drawing.Point(101, 12);
+            this.timeBox.Name = "timeBox";
+            this.timeBox.Size = new System.Drawing.Size(100, 20);
+            this.timeBox.TabIndex = 2;
+            this.timeBox.Text = "100";
+            this.timeBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label1
+            // keyButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Times per Secons";
+            this.keyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.keyButton.BackColor = System.Drawing.Color.Red;
+            this.keyButton.Location = new System.Drawing.Point(101, 38);
+            this.keyButton.Name = "keyButton";
+            this.keyButton.Size = new System.Drawing.Size(100, 23);
+            this.keyButton.TabIndex = 3;
+            this.keyButton.Text = "Click to set key";
+            this.keyButton.UseVisualStyleBackColor = false;
+            this.keyButton.Click += new System.EventHandler(this.keyButton_Click);
             // 
-            // ClickTimer
+            // DelmBox
             // 
-            this.ClickTimer.Tick += new System.EventHandler(this.ClickTimer_Tick);
+            this.DelmBox.AutoSize = true;
+            this.DelmBox.Location = new System.Drawing.Point(12, 69);
+            this.DelmBox.Name = "DelmBox";
+            this.DelmBox.Size = new System.Drawing.Size(69, 17);
+            this.DelmBox.TabIndex = 4;
+            this.DelmBox.Text = "DelayMix";
+            this.DelmBox.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // timer1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 50);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Hold shift to click";
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button3
+            // delmVal
             // 
-            this.button3.Location = new System.Drawing.Point(118, 42);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 20);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Left";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.delmVal.BackColor = System.Drawing.Color.White;
+            this.delmVal.Location = new System.Drawing.Point(101, 67);
+            this.delmVal.Name = "delmVal";
+            this.delmVal.Size = new System.Drawing.Size(100, 20);
+            this.delmVal.TabIndex = 5;
+            this.delmVal.Text = "4";
+            this.delmVal.TextChanged += new System.EventHandler(this.delmVal_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(176, 63);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(213, 93);
+            this.Controls.Add(this.delmVal);
+            this.Controls.Add(this.DelmBox);
+            this.Controls.Add(this.keyButton);
+            this.Controls.Add(this.timeBox);
+            this.Controls.Add(this.rightBox);
+            this.Controls.Add(this.clickBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(229, 132);
+            this.MinimumSize = new System.Drawing.Size(229, 132);
             this.Name = "Form1";
-            this.Text = "CC-Clicker";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "CC-Clicker 2.0";
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,13 +133,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer ClickTimer;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox clickBox;
+        private System.Windows.Forms.CheckBox rightBox;
+        private System.Windows.Forms.TextBox timeBox;
+        private System.Windows.Forms.Button keyButton;
+        private System.Windows.Forms.CheckBox DelmBox;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox delmVal;
     }
 }
 

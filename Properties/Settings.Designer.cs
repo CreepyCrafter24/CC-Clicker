@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AutoClicker.Properties
+namespace CC_Clicker_2._0.Properties
 {
 
 

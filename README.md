@@ -1,1 +1,1 @@
-# CC-Clicker
+# CC-Clicker 2.0
