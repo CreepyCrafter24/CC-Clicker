@@ -18,12 +18,12 @@ namespace CC_Clicker_2._0
             InitializeComponent();
             setPos(x, y);
         }
-        public void setPos(int x, int y) => Location = new Point(x - Width / 2, y - Height / 2);
+        public void setPos(int x, int y) => Location = new Point(x - (Width / 2), y - (Height / 2));
 
         private void OvPForm_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawLine(new Pen(Color.Black, 2), Width / 2 - 15, Height / 2, Width / 2 + 15, Height / 2);
-            e.Graphics.DrawLine(new Pen(Color.Black, 2), Width / 2, Height / 2 - 15, Width / 2, Height / 2 + 15);
+            e.Graphics.DrawLine(new Pen(Color.Black, 2), (Width / 2) - 15, Height / 2, (Width / 2) + 15, Height / 2);
+            e.Graphics.DrawLine(new Pen(Color.Black, 2), Width / 2, (Height / 2) - 15, Width / 2, (Height / 2) + 15);
         }
 
         static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
