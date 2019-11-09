@@ -1,6 +1,6 @@
 ﻿namespace CC_Clicker_2._0
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.clickBox = new System.Windows.Forms.CheckBox();
             this.rightBox = new System.Windows.Forms.CheckBox();
             this.timeBox = new System.Windows.Forms.TextBox();
             this.keyButton = new System.Windows.Forms.Button();
-            this.DelmBox = new System.Windows.Forms.CheckBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.delmBox = new System.Windows.Forms.CheckBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.delmVal = new System.Windows.Forms.TextBox();
+            this.fixBox = new System.Windows.Forms.CheckBox();
+            this.fixButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // clickBox
@@ -83,19 +85,19 @@
             this.keyButton.UseVisualStyleBackColor = false;
             this.keyButton.Click += new System.EventHandler(this.keyButton_Click);
             // 
-            // DelmBox
+            // delmBox
             // 
-            this.DelmBox.AutoSize = true;
-            this.DelmBox.Location = new System.Drawing.Point(12, 69);
-            this.DelmBox.Name = "DelmBox";
-            this.DelmBox.Size = new System.Drawing.Size(69, 17);
-            this.DelmBox.TabIndex = 4;
-            this.DelmBox.Text = "DelayMix";
-            this.DelmBox.UseVisualStyleBackColor = true;
+            this.delmBox.AutoSize = true;
+            this.delmBox.Location = new System.Drawing.Point(12, 69);
+            this.delmBox.Name = "delmBox";
+            this.delmBox.Size = new System.Drawing.Size(69, 17);
+            this.delmBox.TabIndex = 4;
+            this.delmBox.Text = "DelayMix";
+            this.delmBox.UseVisualStyleBackColor = true;
             // 
-            // timer1
+            // timer
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // delmVal
             // 
@@ -107,13 +109,38 @@
             this.delmVal.Text = "4";
             this.delmVal.TextChanged += new System.EventHandler(this.delmVal_TextChanged);
             // 
-            // Form1
+            // fixBox
+            // 
+            this.fixBox.AutoSize = true;
+            this.fixBox.Location = new System.Drawing.Point(12, 97);
+            this.fixBox.Name = "fixBox";
+            this.fixBox.Size = new System.Drawing.Size(79, 17);
+            this.fixBox.TabIndex = 6;
+            this.fixBox.Text = "Fix Position";
+            this.fixBox.UseVisualStyleBackColor = true;
+            this.fixBox.CheckedChanged += new System.EventHandler(this.fixBox_CheckedChanged);
+            // 
+            // fixButton
+            // 
+            this.fixButton.Location = new System.Drawing.Point(101, 93);
+            this.fixButton.Name = "fixButton";
+            this.fixButton.Size = new System.Drawing.Size(100, 23);
+            this.fixButton.TabIndex = 7;
+            this.fixButton.Text = "Set Position";
+            this.fixButton.UseVisualStyleBackColor = true;
+            this.fixButton.Click += new System.EventHandler(this.fixButton_Click);
+            this.fixButton.MouseEnter += new System.EventHandler(this.fixButton_MouseEnter);
+            this.fixButton.MouseLeave += new System.EventHandler(this.fixButton_MouseLeave);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(213, 93);
+            this.ClientSize = new System.Drawing.Size(213, 126);
+            this.Controls.Add(this.fixButton);
+            this.Controls.Add(this.fixBox);
             this.Controls.Add(this.delmVal);
-            this.Controls.Add(this.DelmBox);
+            this.Controls.Add(this.delmBox);
             this.Controls.Add(this.keyButton);
             this.Controls.Add(this.timeBox);
             this.Controls.Add(this.rightBox);
@@ -121,9 +148,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(229, 132);
-            this.MinimumSize = new System.Drawing.Size(229, 132);
-            this.Name = "Form1";
+            this.MaximumSize = new System.Drawing.Size(229, 165);
+            this.MinimumSize = new System.Drawing.Size(229, 165);
+            this.Name = "MainForm";
             this.Text = "CC-Clicker 2.0";
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
@@ -137,9 +164,11 @@
         private System.Windows.Forms.CheckBox rightBox;
         private System.Windows.Forms.TextBox timeBox;
         private System.Windows.Forms.Button keyButton;
-        private System.Windows.Forms.CheckBox DelmBox;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox delmBox;
+        private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.TextBox delmVal;
+        private System.Windows.Forms.CheckBox fixBox;
+        private System.Windows.Forms.Button fixButton;
     }
 }
 
