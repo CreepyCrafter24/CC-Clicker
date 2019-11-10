@@ -12,10 +12,18 @@ namespace CC_Clicker_2._0
     {
         Point loc = Point.Empty;
         OvPForm ov;
+        public static Button _keyButton;
+        public static bool _isSettingKey = false;
+        public static Keys _key = Keys.LShiftKey;
+        public static bool _isClicking = false;
+        public static int _setDelay = 100;
+        public static int _delmVal = 4;
+        public static CheckBox _clickBox;
         public MainForm()
         {
             InitializeComponent();
-            SessionData.keyButton = keyButton;
+            _keyButton = keyButton;
+            _clickBox = clickBox;
             ov = new OvPForm(loc.X, loc.Y);
         }
 
@@ -24,17 +32,18 @@ namespace CC_Clicker_2._0
             if (nCode >= 0 && wParam == (IntPtr)WM_KEYDOWN)
             {
                 int vkCode = Marshal.ReadInt32(lParam);
-                if (SessionData.isSettingKey)
+                if (_isSettingKey)
                 {
-                    SessionData.key = (Keys)vkCode;
-                    SessionData.keyButton.BackColor = Color.FromArgb(224, 224, 224);
-                    SessionData.keyButton.Text = ((Keys)vkCode).ToString();
-                    SessionData.isSettingKey = false;
+                    _key = (Keys)vkCode;
+                    _keyButton.BackColor = Color.FromArgb(224, 224, 224);
+                    _clickBox.Enabled = true;
+                    _keyButton.Text = ((Keys)vkCode).ToString();
+                    _isSettingKey = false;
                 }
                 else
                 {
-                    if ((Keys)vkCode == SessionData.key)
-                        SessionData.isClicking = !SessionData.isClicking;
+                    if ((Keys)vkCode == _key)
+                        _isClicking = !_isClicking;
                 }
             }
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
@@ -42,15 +51,15 @@ namespace CC_Clicker_2._0
 
         private void clickBox_CheckedChanged(object sender, EventArgs e)
         {
-            SessionData.isClicking = false;
+            _isClicking = false;
             timer.Enabled = clickBox.Checked;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void timeBox_TextChanged(object sender, EventArgs e)
         {
             if (int.TryParse(timeBox.Text, out int re) && re > 0)
             {
-                SessionData.setDelay = re;
+                _setDelay = re;
                 timer.Interval = re;
                 timeBox.BackColor = Color.White;
             }
@@ -64,7 +73,7 @@ namespace CC_Clicker_2._0
         {
             if (int.TryParse(delmVal.Text, out int re) && re > 0 && re % 2 == 0)
             {
-                SessionData.delmVal = re;
+                _delmVal = re;
                 delmVal.BackColor = Color.White;
             }
             else
@@ -75,22 +84,19 @@ namespace CC_Clicker_2._0
 
         private void keyButton_Click(object sender, EventArgs e)
         {
-            SessionData.isSettingKey = true;
+            _isSettingKey = true;
             keyButton.BackColor = Color.FromArgb(128, 255, 128);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
-            if (SessionData.isClicking)
+            if (_isClicking)
             {
-                uint X = (uint)Cursor.Position.X;
-                uint Y = (uint)Cursor.Position.Y;
-                if (rightBox.Checked)
-                    mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, X, Y, 0, 0);
-                else
-                    mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
+                if (fixBox.Checked)
+                    Cursor.Position = loc;
+                mouse_event((uint)(rightBox.Checked ? (MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP) : (MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP)), (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
                 if (delmBox.Checked)
-                    timer.Interval = Math.Max(SessionData.setDelay + (new Random().Next(0, SessionData.delmVal) - (SessionData.delmVal / 2)), 1);
+                    timer.Interval = Math.Max(_setDelay + (new Random().Next(0, _delmVal) - (_delmVal / 2)), 1);
             }
         }
 
@@ -116,7 +122,6 @@ namespace CC_Clicker_2._0
             }
         }
 
-        private void Form1_Resize(object sender, EventArgs e) => WindowState = FormWindowState.Normal;
         private void fixButton_MouseEnter(object sender, EventArgs e)
         {
             ov.setPos(loc.X, loc.Y);
@@ -151,15 +156,6 @@ namespace CC_Clicker_2._0
         const int WM_KEYDOWN = 0x0100;
         public static LowLevelKeyboardProc _proc = HookCallback;
         public static IntPtr _hookID = IntPtr.Zero;
-        static class SessionData
-        {
-            public static Button keyButton;
-            public static bool isSettingKey = false;
-            public static Keys key = Keys.LShiftKey;
-            public static bool isClicking = false;
-            public static int setDelay = 100;
-            public static int delmVal = 4;
-        }
         #endregion
     }
 }

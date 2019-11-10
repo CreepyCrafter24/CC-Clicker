@@ -39,11 +39,13 @@
             this.delmVal = new System.Windows.Forms.TextBox();
             this.fixBox = new System.Windows.Forms.CheckBox();
             this.fixButton = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // clickBox
             // 
             this.clickBox.AutoSize = true;
+            this.clickBox.Enabled = false;
             this.clickBox.Location = new System.Drawing.Point(12, 14);
             this.clickBox.Name = "clickBox";
             this.clickBox.Size = new System.Drawing.Size(49, 17);
@@ -71,7 +73,7 @@
             this.timeBox.Size = new System.Drawing.Size(100, 20);
             this.timeBox.TabIndex = 2;
             this.timeBox.Text = "100";
-            this.timeBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.timeBox.TextChanged += new System.EventHandler(this.timeBox_TextChanged);
             // 
             // keyButton
             // 
@@ -97,7 +99,7 @@
             // 
             // timer
             // 
-            this.timer.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // delmVal
             // 
@@ -149,10 +151,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(229, 165);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(229, 165);
             this.Name = "MainForm";
             this.Text = "CC-Clicker 2.0";
-            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,6 +171,7 @@
         private System.Windows.Forms.TextBox delmVal;
         private System.Windows.Forms.CheckBox fixBox;
         private System.Windows.Forms.Button fixButton;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 
