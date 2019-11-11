@@ -11,7 +11,7 @@ namespace CC_Clicker_2._0
     public partial class MainForm : Form
     {
         Point loc = Point.Empty;
-        OvPForm ov;
+        readonly OvPForm ov;
         public static Button _keyButton;
         public static bool _isSettingKey = false;
         public static Keys _key = Keys.LShiftKey;
@@ -103,13 +103,15 @@ namespace CC_Clicker_2._0
         private void fixButton_Click(object sender, EventArgs e)
         {
             ov.Hide();
-            LocForm frm = new LocForm();
-            if (frm.ShowDialog() == DialogResult.OK)
+            using (LocForm frm = new LocForm())
             {
-                loc = new Point(frm.X, frm.Y);
-                fixBox.Checked = true;
-                fixButton.BackColor = Color.Green;
-                fixButton.Text = loc.ToString();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    loc = new Point(frm.X, frm.Y);
+                    fixBox.Checked = true;
+                    fixButton.BackColor = Color.Green;
+                    fixButton.Text = loc.ToString();
+                }
             }
         }
 

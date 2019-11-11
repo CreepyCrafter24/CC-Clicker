@@ -16,6 +16,7 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
+                ov.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -51,6 +52,7 @@
             this.clickBox.Size = new System.Drawing.Size(49, 17);
             this.clickBox.TabIndex = 0;
             this.clickBox.Text = "Click";
+            this.toolTip.SetToolTip(this.clickBox, "Check to start listening for the activation sequence");
             this.clickBox.UseVisualStyleBackColor = true;
             this.clickBox.CheckedChanged += new System.EventHandler(this.clickBox_CheckedChanged);
             // 
@@ -62,6 +64,7 @@
             this.rightBox.Size = new System.Drawing.Size(51, 17);
             this.rightBox.TabIndex = 1;
             this.rightBox.Text = "Right";
+            this.toolTip.SetToolTip(this.rightBox, "Check to use right clicks instead of left clicks");
             this.rightBox.UseVisualStyleBackColor = true;
             // 
             // timeBox
@@ -73,6 +76,7 @@
             this.timeBox.Size = new System.Drawing.Size(100, 20);
             this.timeBox.TabIndex = 2;
             this.timeBox.Text = "100";
+            this.toolTip.SetToolTip(this.timeBox, "Base delay between clicks in milliseconds. Must be an even number above 0");
             this.timeBox.TextChanged += new System.EventHandler(this.timeBox_TextChanged);
             // 
             // keyButton
@@ -84,6 +88,7 @@
             this.keyButton.Size = new System.Drawing.Size(100, 23);
             this.keyButton.TabIndex = 3;
             this.keyButton.Text = "Click to set key";
+            this.toolTip.SetToolTip(this.keyButton, "Click and press a key to set it as the (de-)activation sequence");
             this.keyButton.UseVisualStyleBackColor = false;
             this.keyButton.Click += new System.EventHandler(this.keyButton_Click);
             // 
@@ -95,6 +100,8 @@
             this.delmBox.Size = new System.Drawing.Size(69, 17);
             this.delmBox.TabIndex = 4;
             this.delmBox.Text = "DelayMix";
+            this.toolTip.SetToolTip(this.delmBox, "Check to generate more human clicks by waiting a random amount of time instead of" +
+        " a fixed amount");
             this.delmBox.UseVisualStyleBackColor = true;
             // 
             // timer
@@ -109,6 +116,7 @@
             this.delmVal.Size = new System.Drawing.Size(100, 20);
             this.delmVal.TabIndex = 5;
             this.delmVal.Text = "4";
+            this.toolTip.SetToolTip(this.delmVal, "Maximum Delay that will be randomly added by DelayMix");
             this.delmVal.TextChanged += new System.EventHandler(this.delmVal_TextChanged);
             // 
             // fixBox
@@ -119,6 +127,7 @@
             this.fixBox.Size = new System.Drawing.Size(79, 17);
             this.fixBox.TabIndex = 6;
             this.fixBox.Text = "Fix Position";
+            this.toolTip.SetToolTip(this.fixBox, "Check to use a fixed click position instead of the Cursors position");
             this.fixBox.UseVisualStyleBackColor = true;
             this.fixBox.CheckedChanged += new System.EventHandler(this.fixBox_CheckedChanged);
             // 
@@ -129,6 +138,7 @@
             this.fixButton.Size = new System.Drawing.Size(100, 23);
             this.fixButton.TabIndex = 7;
             this.fixButton.Text = "Set Position";
+            this.toolTip.SetToolTip(this.fixButton, "Set the location where clicks will be simulated");
             this.fixButton.UseVisualStyleBackColor = true;
             this.fixButton.Click += new System.EventHandler(this.fixButton_Click);
             this.fixButton.MouseEnter += new System.EventHandler(this.fixButton_MouseEnter);
