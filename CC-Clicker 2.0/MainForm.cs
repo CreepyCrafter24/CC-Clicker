@@ -9,7 +9,7 @@ namespace CC_Clicker_2._0
     public partial class MainForm : Form
     {
         private static bool _isSettingKey;
-        private const Keys Key = Keys.LShiftKey;
+        private static Keys Key = Keys.LShiftKey;
         private static bool _isClicking;
         private static int _setDelay = 100;
         private static int _delmVal = 4;
@@ -25,9 +25,10 @@ namespace CC_Clicker_2._0
             {
                 if (_isSettingKey)
                 {
+                    Key = e.Key;
                     keyButton1.BackColor = Color.FromArgb(224, 224, 224);
                     clickBox.Enabled = true;
-                    keyButton1.Text = e.Key.ToString();
+                    keyButton1.Text = Key.ToString();
                     _isSettingKey = false;
                 }
                 else
