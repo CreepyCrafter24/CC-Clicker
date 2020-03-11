@@ -32,10 +32,10 @@
             // 
             // LocForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(933, 519);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LocForm";
             this.Opacity = 0.5D;
@@ -46,7 +46,6 @@
             this.Load += new System.EventHandler(this.LocForm_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LocForm_MouseClick);
             this.ResumeLayout(false);
-
         }
 
         #endregion

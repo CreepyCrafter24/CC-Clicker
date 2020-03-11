@@ -16,7 +16,7 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
-                ov.Dispose();
+                _ov.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -30,7 +30,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources =
+                new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.clickBox = new System.Windows.Forms.CheckBox();
             this.rightBox = new System.Windows.Forms.CheckBox();
             this.timeBox = new System.Windows.Forms.TextBox();
@@ -47,9 +48,9 @@
             // 
             this.clickBox.AutoSize = true;
             this.clickBox.Enabled = false;
-            this.clickBox.Location = new System.Drawing.Point(12, 14);
+            this.clickBox.Location = new System.Drawing.Point(14, 16);
             this.clickBox.Name = "clickBox";
-            this.clickBox.Size = new System.Drawing.Size(49, 17);
+            this.clickBox.Size = new System.Drawing.Size(52, 19);
             this.clickBox.TabIndex = 0;
             this.clickBox.Text = "Click";
             this.toolTip.SetToolTip(this.clickBox, "Check to start listening for the activation sequence");
@@ -59,9 +60,9 @@
             // rightBox
             // 
             this.rightBox.AutoSize = true;
-            this.rightBox.Location = new System.Drawing.Point(12, 42);
+            this.rightBox.Location = new System.Drawing.Point(14, 48);
             this.rightBox.Name = "rightBox";
-            this.rightBox.Size = new System.Drawing.Size(51, 17);
+            this.rightBox.Size = new System.Drawing.Size(54, 19);
             this.rightBox.TabIndex = 1;
             this.rightBox.Text = "Right";
             this.toolTip.SetToolTip(this.rightBox, "Check to use right clicks instead of left clicks");
@@ -69,23 +70,28 @@
             // 
             // timeBox
             // 
-            this.timeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.timeBox.Anchor =
+                ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top |
+                                                       System.Windows.Forms.AnchorStyles.Right)));
             this.timeBox.BackColor = System.Drawing.Color.White;
-            this.timeBox.Location = new System.Drawing.Point(101, 12);
+            this.timeBox.Location = new System.Drawing.Point(118, 14);
             this.timeBox.Name = "timeBox";
-            this.timeBox.Size = new System.Drawing.Size(100, 20);
+            this.timeBox.Size = new System.Drawing.Size(116, 23);
             this.timeBox.TabIndex = 2;
             this.timeBox.Text = "100";
-            this.toolTip.SetToolTip(this.timeBox, "Base delay between clicks in milliseconds. Must be an even number above 0");
+            this.toolTip.SetToolTip(this.timeBox,
+                "Base delay between clicks in milliseconds. Must be an even number above 0");
             this.timeBox.TextChanged += new System.EventHandler(this.timeBox_TextChanged);
             // 
             // keyButton
             // 
-            this.keyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.keyButton.Anchor =
+                ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top |
+                                                       System.Windows.Forms.AnchorStyles.Right)));
             this.keyButton.BackColor = System.Drawing.Color.Red;
-            this.keyButton.Location = new System.Drawing.Point(101, 38);
+            this.keyButton.Location = new System.Drawing.Point(118, 44);
             this.keyButton.Name = "keyButton";
-            this.keyButton.Size = new System.Drawing.Size(100, 23);
+            this.keyButton.Size = new System.Drawing.Size(117, 27);
             this.keyButton.TabIndex = 3;
             this.keyButton.Text = "Click to set key";
             this.toolTip.SetToolTip(this.keyButton, "Click and press a key to set it as the (de-)activation sequence");
@@ -95,13 +101,14 @@
             // delmBox
             // 
             this.delmBox.AutoSize = true;
-            this.delmBox.Location = new System.Drawing.Point(12, 69);
+            this.delmBox.Location = new System.Drawing.Point(14, 80);
             this.delmBox.Name = "delmBox";
-            this.delmBox.Size = new System.Drawing.Size(69, 17);
+            this.delmBox.Size = new System.Drawing.Size(75, 19);
             this.delmBox.TabIndex = 4;
             this.delmBox.Text = "DelayMix";
-            this.toolTip.SetToolTip(this.delmBox, "Check to generate more human clicks by waiting a random amount of time instead of" +
-        " a fixed amount");
+            this.toolTip.SetToolTip(this.delmBox,
+                "Check to generate more human clicks by waiting a random amount of time instead of" +
+                " a fixed amount");
             this.delmBox.UseVisualStyleBackColor = true;
             // 
             // timer
@@ -111,9 +118,9 @@
             // delmVal
             // 
             this.delmVal.BackColor = System.Drawing.Color.White;
-            this.delmVal.Location = new System.Drawing.Point(101, 67);
+            this.delmVal.Location = new System.Drawing.Point(118, 77);
             this.delmVal.Name = "delmVal";
-            this.delmVal.Size = new System.Drawing.Size(100, 20);
+            this.delmVal.Size = new System.Drawing.Size(116, 23);
             this.delmVal.TabIndex = 5;
             this.delmVal.Text = "4";
             this.toolTip.SetToolTip(this.delmVal, "Maximum Delay that will be randomly added by DelayMix");
@@ -122,9 +129,9 @@
             // fixBox
             // 
             this.fixBox.AutoSize = true;
-            this.fixBox.Location = new System.Drawing.Point(12, 97);
+            this.fixBox.Location = new System.Drawing.Point(14, 112);
             this.fixBox.Name = "fixBox";
-            this.fixBox.Size = new System.Drawing.Size(79, 17);
+            this.fixBox.Size = new System.Drawing.Size(87, 19);
             this.fixBox.TabIndex = 6;
             this.fixBox.Text = "Fix Position";
             this.toolTip.SetToolTip(this.fixBox, "Check to use a fixed click position instead of the Cursors position");
@@ -133,9 +140,9 @@
             // 
             // fixButton
             // 
-            this.fixButton.Location = new System.Drawing.Point(101, 93);
+            this.fixButton.Location = new System.Drawing.Point(118, 107);
             this.fixButton.Name = "fixButton";
-            this.fixButton.Size = new System.Drawing.Size(100, 23);
+            this.fixButton.Size = new System.Drawing.Size(117, 27);
             this.fixButton.TabIndex = 7;
             this.fixButton.Text = "Set Position";
             this.toolTip.SetToolTip(this.fixButton, "Set the location where clicks will be simulated");
@@ -146,9 +153,9 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(213, 126);
+            this.ClientSize = new System.Drawing.Size(260, 157);
             this.Controls.Add(this.fixButton);
             this.Controls.Add(this.fixBox);
             this.Controls.Add(this.delmVal);
@@ -158,16 +165,15 @@
             this.Controls.Add(this.rightBox);
             this.Controls.Add(this.clickBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(229, 165);
+            this.MaximumSize = new System.Drawing.Size(266, 186);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(229, 165);
+            this.MinimumSize = new System.Drawing.Size(266, 186);
             this.Name = "MainForm";
             this.Text = "CC-Clicker 2.0";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

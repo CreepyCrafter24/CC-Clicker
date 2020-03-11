@@ -32,18 +32,19 @@
             // 
             // OvPForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(30, 30);
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))),
+                ((int) (((byte) (0)))));
+            this.ClientSize = new System.Drawing.Size(35, 35);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OvPForm";
             this.Text = "OvPForm";
-            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))),
+                ((int) (((byte) (0)))));
             this.Load += new System.EventHandler(this.OvPForm_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.OvPForm_Paint);
             this.ResumeLayout(false);
-
         }
 
         #endregion

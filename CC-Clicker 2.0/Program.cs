@@ -1,26 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using CC_Functions.W32.Hooks;
 
 namespace CC_Clicker_2._0
 {
-    static class Program
+    internal static class Program
     {
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool UnhookWindowsHookEx(IntPtr hhk);
-
         [STAThread]
-        static void Main()
+        private static void Main()
         {
+            using KeyboardHook hook = new KeyboardHook();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            MainForm._hookID = MainForm.SetHook(MainForm._proc);
-            Application.Run(new MainForm());
-            UnhookWindowsHookEx(MainForm._hookID);
+            Application.Run(new MainForm(hook));
         }
     }
 }
