@@ -17,6 +17,6 @@
     <Content Include="C_64.ico" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CC-Functions.W32" Version="1.0.7" />
+    <PackageReference Include="CC-Functions.W32" Version="1.1.7384.27745" />
   </ItemGroup>
 </Project>
